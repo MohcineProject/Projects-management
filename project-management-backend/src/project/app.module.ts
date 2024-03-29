@@ -1,7 +1,7 @@
 // app.module.ts
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Project } from './project'; // Import your entity
+import { Project } from './project.entity'; // Import your entity
 import { ProjectService } from './project.service'; // Import your service
 import { ProjectController } from './project.controller'; // Import your controller
 
@@ -13,7 +13,7 @@ import { ProjectController } from './project.controller'; // Import your control
             port : 5432 ,
             username : 'Mohcine' , 
             password : 'Mohcine' , 
-            database : 'project-management' , 
+            database : 'project_management' , 
             entities: [Project], 
             synchronize: true
 

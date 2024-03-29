@@ -1,7 +1,7 @@
 
 import {Controller, Get, Post, Param, Put, Delete , Body} from '@nestjs/common';
 import { ProjectService } from './project.service';
-import { Project } from './project';
+import { Project } from './project.entity';
 
 @Controller('projects') 
 export class ProjectController {
@@ -13,7 +13,7 @@ export class ProjectController {
     }
 
     @Get(':id')
-    findOne(@Param('id') id: string): Promise<Project> {
+    findOne(@Param('id') id: string): Promise<Project | null> {
         return this.projectService.findOne(+id);
     }
 
@@ -23,7 +23,7 @@ export class ProjectController {
     }
 
     @Put(':id')
-    update(@Param('id') id: string, @Body() projectData:Partial<Project>) : Promise<Project> {
+    update(@Param('id') id: string, @Body() projectData:Partial<Project>) : Promise<Project | null> {
         return this.projectService.update(+id, projectData);
     }
 
