@@ -1,0 +1,22 @@
+.cover {
+    background-image: url('../../assets/profil.png');
+    background-position: center;
+    background-size: cover;
+
+}
+
+.title {
+    position: relative;
+    z-index: 1;
+    &:before {
+        content: ""; /* Empty content */
+        position: absolute;
+        top: 95%; /* Adjusted to 50% */
+        left: 0; /* Adjusted to 0 */
+        width: 100%;
+        height: 0.5rem;
+        background-color: #808080;
+        z-index: -1;
+        
+    }
+}
