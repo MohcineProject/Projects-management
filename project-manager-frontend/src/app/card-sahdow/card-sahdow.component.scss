@@ -1,0 +1,20 @@
+.symbol-container {
+    height: 100%; 
+    width: 100%;
+    display: grid ; 
+    place-items: center;
+
+    .symbol {
+        height: 50%; 
+        width: 50%;
+        opacity: 0.5;
+        
+    }
+}
+
+.card {
+    cursor: pointer; 
+    border-style: dashed; 
+    border-color: #000000; 
+    width: 100%;
+}

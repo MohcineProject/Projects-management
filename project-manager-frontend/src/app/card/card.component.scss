@@ -4,7 +4,7 @@
     overflow: hidden;
   }
   
-  .card img {
+ img {
     width: 100%;
     height: auto;
     display: block;
@@ -23,3 +23,10 @@
     font-size: 1rem;
   }
   
+  .symbol{
+   
+    height: 16px;
+    width: 16px;
+    display: inline;
+    margin: 0 15%;
+  }
