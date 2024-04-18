@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
   selector: 'app-card-sahdow',
   standalone: true,
-  imports: [],
+  imports: [ModalComponent],
   templateUrl: './card-sahdow.component.html',
   styleUrl: './card-sahdow.component.scss'
 })
