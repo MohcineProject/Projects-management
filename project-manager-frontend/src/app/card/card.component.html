@@ -3,11 +3,12 @@
     MyProject
 <!--     {{project.name}}
  -->   </h4>
-    <h5 class="pl-4">
+    <h5 class="ml-4  p-2 rounded-pill" style="width: fit-content; font-size: 16px"  [ngStyle]="{'background-color': getColorOfState('Done') }">
       
-       Description 
+       Done
+
     </h5>
-    <div class="text-secondary pl-4">
+    <div class=" pl-4">
       This is my first ever project
       <!-- {{project.description}} -->
     </div>

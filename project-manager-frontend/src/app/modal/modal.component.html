@@ -6,29 +6,36 @@
 	<div class="modal-body">
 		<form>
 			<div class="mb-3">
-				<label for="dateOfBirth">Date of birth</label>
-				<div class="input-group">
-					<input
-						id="dateOfBirth"
-						class="form-control"
-						placeholder="yyyy-mm-dd"
-						name="dp"
-						ngbDatepicker
-						#dp="ngbDatepicker"
-					/>
-					<button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button>
-				</div>
-			</div>
+                <label for="projectName">Project Name</label>
+                <input type="text" id="projectName" class="form-control" name="projectName" [(ngModel)]="projectName"  required>
+              </div>
+              <div class="mb-3">
+                <label for="projectDescription">Project Description</label>
+                <textarea id="projectDescription" class="form-control" name="projectDescription" [(ngModel)]="projectDescription"  required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="projectState"> Project state </label>
+                <select id="projectState"  class="form-control" name="projectState" [(ngModel)]="projectState"  required>
+                  <option value="Done" selected >Done</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Suspended">Suspended</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" class="form-control" name="startDate" [(ngModel)]="startDate" required>
+              </div>
+              <button type="submit" class="btn btn-primary" (click)="submit()">Create Project</button>
 		</form>
 	</div>
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">close</button>
 	</div>
 </ng-template>
 
 
-<img class="symbol " src="../../assets/Plus-Sign.png" (click)="open(content)"  alt="Adding sign"  >
+<img class="symbol mx-auto"  src="../../assets/Plus-Sign.png" (click)="open(content)"  alt="Adding sign"  >
 
-<hr />
 
-<pre>{{ closeResult }}</pre>
+
