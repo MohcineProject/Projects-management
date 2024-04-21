@@ -6,6 +6,7 @@ export enum ProjectState {
 }
 
 export interface Project {
+    
     name: string;
     description: string;
     startingDate: Date;

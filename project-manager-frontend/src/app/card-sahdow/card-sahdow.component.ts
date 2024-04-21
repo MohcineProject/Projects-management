@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 
 
@@ -11,12 +11,15 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class CardSahdowComponent {
 
-  
+@ViewChild('Modal')  private modalComponent!: ModalComponent;  
   private newProject : boolean = false; 
 
   addNewProject() {
     this.newProject  = true ; 
   }
-
+ open() {
+  this.modalComponent.setState('create') ; 
+  this.modalComponent.open();
+}
 
 }

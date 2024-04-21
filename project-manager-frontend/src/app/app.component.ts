@@ -7,7 +7,7 @@ import { AuthentificationComponent } from './authentification/authentification.c
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CardComponent,AuthentificationComponent],
+  imports: [RouterOutlet,CardComponent,AuthentificationComponent,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
