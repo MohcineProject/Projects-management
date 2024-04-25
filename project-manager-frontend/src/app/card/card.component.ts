@@ -3,6 +3,7 @@ import { Project } from './project/project';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../modal/modal.component';
 import { ModalSuccessComponent } from '../modal-success/modal-success.component';
+import { FetchDataService } from '../main/service/fetch-data.service';
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -16,6 +17,10 @@ export class CardComponent {
 @ViewChild('Modal') modalComponent! : ModalComponent ; 
 @ViewChild('ModalSuccess') modalSuccessComponent! : ModalSuccessComponent ; 
 
+
+constructor (private fetchDataService: FetchDataService) {}
+
+
 colorMap : {[key:string] : string} = {
   "Done" : "#098000" , 
   'In Progress' : "#eaff04fc" ,
@@ -26,7 +31,6 @@ colorMap : {[key:string] : string} = {
 getColorOfState(state: string): string { return this.colorMap[state]; } 
 
 deleteProject() {
-/* this.fetchDataService.deleteProject() ;  */
 this.modalSuccessComponent.open() ; 
 }
 

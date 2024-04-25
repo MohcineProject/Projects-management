@@ -53,11 +53,14 @@ constructor(private modalService: NgbModal, private fetchDataService: FetchDataS
 
 	submit() {
 		const project : Project = {
+			id : this.fetchDataService.getNextId(),
 			name: this.projectName,
 			description: this.projectDescription,
 			startingDate: this.startDate,
 			state: this.projectState
 		} 
+
+		
 		if (this.state == 'create') {
 			this.fetchDataService.addProject(project) ; 
 			
