@@ -26,12 +26,17 @@ export class ModalComponent {
 
 constructor(private modalService: NgbModal, private fetchDataService: FetchDataService) {}
 
-  public state: State = State.CREATE; 
-
-  public projectName : string = '' ; 
-  public projectDescription : string = '' ; 
-  public startDate : Date = new Date() ; 
-  public projectState : ProjectState  = ProjectState.DONE;  
+  private  state: State = State.CREATE; 
+ 
+  private projectName : string = '' ; 
+  private projectDescription : string = '' ; 
+  private startDate : Date = new Date() ; 
+  private projectState : ProjectState  = ProjectState.DONE;  
+  private project: Project  = {id :-1,
+	name: this.projectName , 
+	description: this.projectDescription,
+	startingDate: this.startDate,
+	state: this.projectState};
    
 
 	
@@ -39,6 +44,11 @@ constructor(private modalService: NgbModal, private fetchDataService: FetchDataS
     setState(newState: String) {
 		this.state = newState as State;
 	  }
+
+
+	addProjectToUpdate(project: Project) {
+		this.project = project; 
+	}
 
 	@ViewChild('content') content !  : TemplateRef<any> ; 
 
@@ -52,21 +62,30 @@ constructor(private modalService: NgbModal, private fetchDataService: FetchDataS
 	}
 
 	submit() {
-		const project : Project = {
-			id : this.fetchDataService.getNextId(),
-			name: this.projectName,
-			description: this.projectDescription,
-			startingDate: this.startDate,
-			state: this.projectState
-		} 
 
 		
+
+
 		if (this.state == 'create') {
+			const project : Project = {
+				id : this.fetchDataService.getNextId(),
+				name: this.projectName,
+				description: this.projectDescription,
+				startingDate: this.startDate,
+				state: this.projectState
+			} 
 			this.fetchDataService.addProject(project) ; 
 			
 		}
 	else {
-		this.fetchDataService.updateProject(project) ; 
+		
+		this.fetchDataService.updateProject(this.project) ; 
 	}
+
+	this.modalService.dismissAll() ; 
 	}
+
+
+
+	
 }

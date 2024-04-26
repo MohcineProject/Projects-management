@@ -36,6 +36,7 @@ this.modalSuccessComponent.open() ;
 
 openModal() {
 this.modalComponent.setState('update') ; 
+this.modalComponent.addProjectToUpdate(this.project) ; 
 this.modalComponent.open();
 }
 
