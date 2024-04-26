@@ -26,13 +26,13 @@ export class ModalComponent {
 
 constructor(private modalService: NgbModal, private fetchDataService: FetchDataService) {}
 
-  private  state: State = State.CREATE; 
+    state: State = State.CREATE; 
  
-  private projectName : string = '' ; 
-  private projectDescription : string = '' ; 
-  private startDate : Date = new Date() ; 
-  private projectState : ProjectState  = ProjectState.DONE;  
-  private project: Project  = {id :-1,
+   projectName : string = '' ; 
+   projectDescription : string = '' ; 
+   startDate : Date = new Date() ; 
+   projectState : ProjectState  = ProjectState.DONE;  
+   project: Project  = {id :-1,
 	name: this.projectName , 
 	description: this.projectDescription,
 	startingDate: this.startDate,
